@@ -9,7 +9,7 @@
 	//Testing code here: START
 	document.addEventListener('DOMContentLoaded', function () {
 		// Select form elements
-		const form = document.querySelector('form');
+		const form = document.querySelector('three');
 		const nameField = document.getElementById('name');
 		const emailField = document.getElementById('email');
 		const messageField = document.getElementById('message');
