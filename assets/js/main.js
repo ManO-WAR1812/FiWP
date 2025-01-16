@@ -6,7 +6,42 @@
 
 (function($) {
 
+	//Testing code here: START
+	document.addEventListener('DOMContentLoaded', function () {
+		// Select form elements
+		const form = document.querySelector('sub-form');
+		const nameField = document.getElementById('name');
+		const emailField = document.getElementById('email');
+		const messageField = document.getElementById('message');
+	
+		// Add event listener for form submission
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+	
+			// Get form values
+			const name = nameField.value.trim();
+			const email = emailField.value.trim();
+			const message = messageField.value.trim();
+	
+			// Validate the input
+			if (!name || !email || !message) {
+				alert('Please fill out all fields.');
+				return;
+			}
+	
+			// Construct a mailto link
+			const mailtoLink = `mailto:johvicpo1720@gmail.com?subject=${encodeURIComponent(
+				`Message from ${name} (${email})`
+			)}&body=${encodeURIComponent(message)}`;
+	
+			// Open the mailto link
+			window.location.href = mailtoLink;
+		});
+	});
+	
 
+
+	//Testing code here: END
 
 	var $window = $(window),
 		$body = $('body'),
