@@ -6,6 +6,33 @@
 
 (function($) {
 
+	//Testing code here: START
+	form.addEventListener('submit', (event) => {
+		event.preventDefault();
+	
+		// Get form values
+		const name = nameField.value.trim();
+		const email = nameField.value.trim();
+		const message = messageField.value.trim();
+	
+		// Validate the input
+		if (!name || !email || !message) {
+			alert('Please fill out all fields.');
+			return;
+		}
+	
+		// Construct a mailto link
+		const mailtoLink = `mailto:your-email@gmail.com?subject=${encodeURIComponent(
+			`Message from ${name} (${email})`
+		)}&body=${encodeURIComponent(message)}`;
+	
+		// Open the mailto link
+		window.location.href = mailtoLink;
+	});
+
+
+	//Testing code here: END
+
 	var $window = $(window),
 		$body = $('body'),
 		$header = $('#header'),
