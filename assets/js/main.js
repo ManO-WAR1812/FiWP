@@ -7,28 +7,38 @@
 (function($) {
 
 	//Testing code here: START
-	form.addEventListener('submit', (event) => {
-		event.preventDefault();
+	document.addEventListener('DOMContentLoaded', function () {
+		// Select form elements
+		const form = document.querySelector('form');
+		const nameField = document.getElementById('name');
+		const emailField = document.getElementById('email');
+		const messageField = document.getElementById('message');
 	
-		// Get form values
-		const name = nameField.value.trim();
-		const email = nameField.value.trim();
-		const message = messageField.value.trim();
+		// Add event listener for form submission
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
 	
-		// Validate the input
-		if (!name || !email || !message) {
-			alert('Please fill out all fields.');
-			return;
-		}
+			// Get form values
+			const name = nameField.value.trim();
+			const email = emailField.value.trim();
+			const message = messageField.value.trim();
 	
-		// Construct a mailto link
-		const mailtoLink = `mailto:your-email@gmail.com?subject=${encodeURIComponent(
-			`Message from ${name} (${email})`
-		)}&body=${encodeURIComponent(message)}`;
+			// Validate the input
+			if (!name || !email || !message) {
+				alert('Please fill out all fields.');
+				return;
+			}
 	
-		// Open the mailto link
-		window.location.href = mailtoLink;
+			// Construct a mailto link
+			const mailtoLink = `mailto:johvicpo1720@gmail.com?subject=${encodeURIComponent(
+				`Message from ${name} (${email})`
+			)}&body=${encodeURIComponent(message)}`;
+	
+			// Open the mailto link
+			window.location.href = mailtoLink;
+		});
 	});
+	
 
 
 	//Testing code here: END
